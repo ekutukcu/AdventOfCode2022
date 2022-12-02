@@ -3,7 +3,7 @@
 class RockPaperScissors
 {
 public:
-	int calculateScore(std::istream& inputStream);
-	int calculateScore2(std::istream& inputStream);
+	int calculateScoreShapePrediction(std::istream& inputStream);
+	int calculateScoreResultPredication(std::istream& inputStream);
 };
 

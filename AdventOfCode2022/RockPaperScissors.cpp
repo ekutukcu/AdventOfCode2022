@@ -2,7 +2,7 @@
 #include <functional>
 #include <unordered_map>
 
-int RockPaperScissors::calculateScore(std::istream& inputStream)
+int RockPaperScissors::calculateScoreShapePrediction(std::istream& inputStream)
 {
 	char theirMove;
 	char myMove;
@@ -32,12 +32,10 @@ int RockPaperScissors::calculateScore(std::istream& inputStream)
 	}
 
 	return score;
-
-
 }
 
 
-int RockPaperScissors::calculateScore2(std::istream& inputStream)
+int RockPaperScissors::calculateScoreResultPredication(std::istream& inputStream)
 {
 	char theirMove;
 	char myMove;

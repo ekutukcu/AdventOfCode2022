@@ -52,7 +52,7 @@ namespace AdventOfCode2022Tests
 		std::stringstream strStream(lines);
 
 		// act
-		int result = rockPaperScissors.calculateScore(strStream);
+		int result = rockPaperScissors.calculateScoreShapePrediction(strStream);
 
 		// assert
 		EXPECT_EQ(8, result);
@@ -65,7 +65,7 @@ namespace AdventOfCode2022Tests
 		std::stringstream strStream(lines);
 
 		// act
-		int result = rockPaperScissors.calculateScore(strStream);
+		int result = rockPaperScissors.calculateScoreShapePrediction(strStream);
 
 		// assert
 		EXPECT_EQ(15, result);
@@ -85,7 +85,7 @@ namespace AdventOfCode2022Tests
 		std::stringstream strStream(lines);
 
 		// act
-		int result = rockPaperScissors.calculateScore(strStream);
+		int result = rockPaperScissors.calculateScoreShapePrediction(strStream);
 
 		// assert
 		EXPECT_EQ(50, result);
@@ -98,7 +98,7 @@ namespace AdventOfCode2022Tests
 		std::stringstream strStream(lines);
 
 		// act
-		int result = rockPaperScissors.calculateScore2(strStream);
+		int result = rockPaperScissors.calculateScoreResultPredication(strStream);
 
 		// assert
 		EXPECT_EQ(12, result);
