@@ -58,7 +58,7 @@ int RockPaperScissors::calculateScoreResultPredication(std::istream& inputStream
 	while (!inputStream.eof())
 	{
 		auto index = std::string(1,theirMove);
-		index += myMove;
+		index.push_back(myMove);
 
 		score += points_map[index];
 
