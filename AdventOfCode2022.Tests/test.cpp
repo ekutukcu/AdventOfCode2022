@@ -90,4 +90,17 @@ namespace AdventOfCode2022Tests
 		// assert
 		EXPECT_EQ(50, result);
 	}
+
+	TEST(RocksPaperScissorsTest, PartTwoHandlesThreeGames) {
+		// arrange
+		RockPaperScissors rockPaperScissors;
+		std::string lines = "A Y\nB X\nC Z";
+		std::stringstream strStream(lines);
+
+		// act
+		int result = rockPaperScissors.calculateScore2(strStream);
+
+		// assert
+		EXPECT_EQ(12, result);
+	}
 }

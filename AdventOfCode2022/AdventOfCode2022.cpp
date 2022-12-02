@@ -42,7 +42,7 @@ void runDay2()
     RockPaperScissors day2;
     std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input2.txt");
     std::ifstream inputStream(filePath);
-    int cals = day2.calculateScore(inputStream);
+    int cals = day2.calculateScore2(inputStream);
     std::cout << cals << std::endl;
 }
 

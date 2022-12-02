@@ -1,4 +1,6 @@
 #include "RockPaperScissors.h"
+#include <functional>
+#include <unordered_map>
 
 int RockPaperScissors::calculateScore(std::istream& inputStream)
 {
@@ -7,7 +9,7 @@ int RockPaperScissors::calculateScore(std::istream& inputStream)
 	int score = 0;
 	inputStream >> theirMove;
 	inputStream >> myMove;
-	int line = 0;
+
 	while (!inputStream.eof())
 	{
 		if (myMove == theirMove + 23)
@@ -27,7 +29,6 @@ int RockPaperScissors::calculateScore(std::istream& inputStream)
 		score += myMove - 'W';
 		inputStream >> theirMove;
 		inputStream >> myMove;
-		line++;
 	}
 
 	return score;
@@ -43,27 +44,28 @@ int RockPaperScissors::calculateScore2(std::istream& inputStream)
 	int score = 0;
 	inputStream >> theirMove;
 	inputStream >> myMove;
-	int line = 0;
+
+	std::unordered_map<std::string, int> points_map = {
+		{"AX", 3},
+		{"AY", 4},
+		{"AZ", 8},
+		{"BX", 1},
+		{"BY", 5},
+		{"BZ", 9},
+		{"CX", 2},
+		{"CY", 6},
+		{"CZ", 7}
+	};
+
 	while (!inputStream.eof())
 	{
-		if (myMove == theirMove + 23)
-		{
-			score += 3;
-		}
-		else if (theirMove == 'A' && myMove == 'Y' ||
-			theirMove == 'B' && myMove == 'Z' ||
-			theirMove == 'C' && myMove == 'X')
-		{
-			score += 6;
-		}
-		else
-		{
-			score += 0;
-		}
-		score += myMove - 'W';
+		auto index = std::string(1,theirMove);
+		index += myMove;
+
+		score += points_map[index];
+
 		inputStream >> theirMove;
 		inputStream >> myMove;
-		line++;
 	}
 
 	return score;
