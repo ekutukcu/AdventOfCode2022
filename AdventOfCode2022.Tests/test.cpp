@@ -3,6 +3,8 @@
 #include "../AdventOfCode2022/CalorieCounting.cpp"
 #include "../AdventOfCode2022/RockPaperScissors.h"
 #include "../AdventOfCode2022/RockPaperScissors.cpp"
+#include "../AdventOfCode2022/Rucksack.h"
+#include "../AdventOfCode2022/Rucksack.cpp"
 
 namespace AdventOfCode2022Tests
 {
@@ -102,5 +104,41 @@ namespace AdventOfCode2022Tests
 
 		// assert
 		EXPECT_EQ(12, result);
+	}
+	TEST(RucksackTest, getMissingItemsTotalHandlesFiveLines) {
+		// arrange
+		
+		std::string lines = "vJrwpWtwJgWrhcsFMMfFFhFp"
+			"\njqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL"
+			"\nPmmdzqPrVvPwwTWBwg"
+			"\nwMqvLMZHhHMvwLHjbvcjnnSBnvTQFn"
+			"\nttgJtRGJQctTZtZT"
+			"\nCrZsJsPPZsGzwwsLwLmpwMDw";
+		std::stringstream strStream(lines);
+
+		// act
+		int result = Rucksack::getMissingItemsTotal(strStream);
+
+		// assert
+		EXPECT_EQ(157, result);
+	}
+
+	TEST(RucksackTest, getBadgesTotalHandlesFiveLines) {
+		// arrange
+
+		std::string lines = "vJrwpWtwJgWrhcsFMMfFFhFp"
+			"\njqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL"
+			"\nPmmdzqPrVvPwwTWBwg"
+			"\nwMqvLMZHhHMvwLHjbvcjnnSBnvTQFn"
+			"\nttgJtRGJQctTZtZT"
+			"\nCrZsJsPPZsGzwwsLwLmpwMDw";
+
+		std::stringstream strStream(lines);
+
+		// act
+		int result = Rucksack::getBadgesTotal(strStream);
+
+		// assert
+		EXPECT_EQ(70, result);
 	}
 }

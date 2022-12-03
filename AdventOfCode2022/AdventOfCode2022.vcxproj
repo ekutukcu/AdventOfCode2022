@@ -130,10 +130,12 @@
     <ClCompile Include="AdventOfCode2022.cpp" />
     <ClCompile Include="CalorieCounting.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />
+    <ClCompile Include="Rucksack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounting.h" />
     <ClInclude Include="RockPaperScissors.h" />
+    <ClInclude Include="Rucksack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

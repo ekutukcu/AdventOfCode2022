@@ -5,13 +5,16 @@
 #include <chrono>
 #include "CalorieCounting.h"
 #include "RockPaperScissors.h"
+#include "Rucksack.h"
 
 void runDay1();
 void runDay2();
+void runDay3();
+void runDay3_2();
 
 int main()
 {
-    runDay2();
+    runDay3_2();
     return 0;
 }
 
@@ -43,6 +46,21 @@ void runDay2()
     std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input2.txt");
     std::ifstream inputStream(filePath);
     int cals = day2.calculateScoreResultPredication(inputStream);
+    std::cout << cals << std::endl;
+}
+void runDay3()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input3.txt");
+    std::ifstream inputStream(filePath);
+    int cals = Rucksack::getMissingItemsTotal(inputStream);
+    std::cout << cals << std::endl;
+}
+
+void runDay3_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input3.txt");
+    std::ifstream inputStream(filePath);
+    int cals = Rucksack::getBadgesTotal(inputStream);
     std::cout << cals << std::endl;
 }
 

@@ -24,12 +24,18 @@
     <ClCompile Include="RockPaperScissors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rucksack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RockPaperScissors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rucksack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
