@@ -6,15 +6,18 @@
 #include "CalorieCounting.h"
 #include "RockPaperScissors.h"
 #include "Rucksack.h"
+#include "PairOverlap.h"
 
 void runDay1();
 void runDay2();
 void runDay3();
 void runDay3_2();
+void runDay4();
+void runDay4_2();
 
 int main()
 {
-    runDay3_2();
+    runDay4_2();
     return 0;
 }
 
@@ -61,6 +64,22 @@ void runDay3_2()
     std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input3.txt");
     std::ifstream inputStream(filePath);
     int cals = Rucksack::getBadgesTotal(inputStream);
+    std::cout << cals << std::endl;
+}
+
+void runDay4()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input4.txt");
+    std::ifstream inputStream(filePath);
+    int cals = getOverlappingPairCount(inputStream, true);
+    std::cout << cals << std::endl;
+}
+
+void runDay4_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input4.txt");
+    std::ifstream inputStream(filePath);
+    int cals = getOverlappingPairCount(inputStream, false);
     std::cout << cals << std::endl;
 }
 
