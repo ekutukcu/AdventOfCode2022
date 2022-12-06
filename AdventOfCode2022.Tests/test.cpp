@@ -6,10 +6,12 @@
 #include "../AdventOfCode2022/Rucksack.h"
 #include "../AdventOfCode2022/Rucksack.cpp"
 #include "../AdventOfCode2022/PairOverlap.cpp"
+#include "../AdventOfCode2022/SupplyStacks.cpp"
+#include "../AdventOfCode2022/TuningTrouble.cpp"
 
 namespace AdventOfCode2022Tests
 {
-	TEST(CalorieCountingTest, HandlesTwoReindeer) {
+	TEST(CalorieCounting, HandlesTwoReindeer) {
 		// arrange
 		CalorieCounting calorieCounting(3);
 		std::string lines = "10\n10\n\n20\n20";
@@ -22,7 +24,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(60, result);
 	}
 
-	TEST(CalorieCountingTest, HandlesFourReindeer) {
+	TEST(CalorieCounting, HandlesFourReindeer) {
 		// arrange
 		CalorieCounting calorieCounting(3);
 		std::string lines = "10\n10\n\n20\n20\n\n10\n\n20\n20\n20";
@@ -35,7 +37,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(120, result);
 	}
 
-	TEST(CalorieCountingTest, HandlesSingleResult) {
+	TEST(CalorieCounting, HandlesSingleResult) {
 		// arrange
 		CalorieCounting calorieCounting(1);
 		std::string lines = "10\n10\n\n20\n20\n\n20\n\n20\n20\n20";
@@ -48,7 +50,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(60, result);
 	}
 
-	TEST(RocksPaperScissorsTest, HandlesSingleGame) {
+	TEST(RocksPaperScissors, HandlesSingleGame) {
 		// arrange
 		RockPaperScissors rockPaperScissors;
 		std::string lines = "A Y\n";
@@ -61,7 +63,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(8, result);
 	}
 
-	TEST(RocksPaperScissorsTest, HandlesThreeGames) {
+	TEST(RocksPaperScissors, HandlesThreeGames) {
 		// arrange
 		RockPaperScissors rockPaperScissors;
 		std::string lines = "A Y\nB X\nC Z";
@@ -73,7 +75,7 @@ namespace AdventOfCode2022Tests
 		// assert
 		EXPECT_EQ(15, result);
 	}
-	TEST(RocksPaperScissorsTest, HandlesEightGames) {
+	TEST(RocksPaperScissors, HandlesEightGames) {
 		// arrange
 		RockPaperScissors rockPaperScissors;
 		std::string lines =
@@ -94,7 +96,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(50, result);
 	}
 
-	TEST(RocksPaperScissorsTest, PartTwoHandlesThreeGames) {
+	TEST(RocksPaperScissors, PartTwoHandlesThreeGames) {
 		// arrange
 		RockPaperScissors rockPaperScissors;
 		std::string lines = "A Y\nB X\nC Z";
@@ -106,7 +108,7 @@ namespace AdventOfCode2022Tests
 		// assert
 		EXPECT_EQ(12, result);
 	}
-	TEST(RucksackTest, getMissingItemsTotalHandlesFiveLines) {
+	TEST(Rucksack, getMissingItemsTotalHandlesFiveLines) {
 		// arrange
 		
 		std::string lines = "vJrwpWtwJgWrhcsFMMfFFhFp"
@@ -124,7 +126,7 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(157, result);
 	}
 
-	TEST(RucksackTest, getBadgesTotalHandlesFiveLines) {
+	TEST(Rucksack, getBadgesTotalHandlesFiveLines) {
 		// arrange
 
 		std::string lines = "vJrwpWtwJgWrhcsFMMfFFhFp"
@@ -179,5 +181,61 @@ namespace AdventOfCode2022Tests
 
 		// assert
 		EXPECT_EQ(4, result);
+	}
+
+	TEST(SupplyStacks, getTopCratesIndividually) {
+		// arrange
+
+		std::string lines = "    [D]    "
+			"\n[N] [C]    "
+			"\n[Z] [M] [P]"
+			"\n 1   2   3"
+			"\n"
+			"\nmove 1 from 2 to 1"
+			"\nmove 3 from 1 to 3"
+			"\nmove 2 from 2 to 1"
+			"\nmove 1 from 1 to 2";
+
+		std::stringstream strStream(lines);
+
+		// act
+		auto result = getTopCrates(strStream, 3);
+
+		// assert
+		EXPECT_EQ("CMZ", result);
+	}
+
+
+	TEST(SupplyStacks, getTopCratesMultiple) {
+		// arrange
+
+		std::string lines = "    [D]    "
+			"\n[N] [C]    "
+			"\n[Z] [M] [P]"
+			"\n 1   2   3"
+			"\n"
+			"\nmove 1 from 2 to 1"
+			"\nmove 3 from 1 to 3"
+			"\nmove 2 from 2 to 1"
+			"\nmove 1 from 1 to 2";
+
+		std::stringstream strStream(lines);
+
+		// act
+		auto result = getTopCrates(strStream, 3, false);
+
+		// assert
+		EXPECT_EQ("MCD", result);
+	}
+
+	TEST(TuningTrouble, getMarkerLocation) {
+		// arrange
+		std::string lines = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw";
+
+		// act
+		auto result = getMarkerLocation(lines, 4);
+
+		// assert
+		EXPECT_EQ(11, result);
 	}
 }

@@ -132,12 +132,16 @@
     <ClCompile Include="PairOverlap.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />
     <ClCompile Include="Rucksack.cpp" />
+    <ClCompile Include="SupplyStacks.cpp" />
+    <ClCompile Include="TuningTrouble.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounting.h" />
     <ClInclude Include="PairOverlap.h" />
     <ClInclude Include="RockPaperScissors.h" />
     <ClInclude Include="Rucksack.h" />
+    <ClInclude Include="SupplyStacks.h" />
+    <ClInclude Include="TuningTrouble.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

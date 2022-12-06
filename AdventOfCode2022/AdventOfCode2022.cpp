@@ -7,6 +7,8 @@
 #include "RockPaperScissors.h"
 #include "Rucksack.h"
 #include "PairOverlap.h"
+#include "SupplyStacks.h"
+#include "TuningTrouble.h"
 
 void runDay1();
 void runDay2();
@@ -14,10 +16,14 @@ void runDay3();
 void runDay3_2();
 void runDay4();
 void runDay4_2();
+void runDay5();
+void runDay5_2();
+void runDay6();
+void runDay6_2();
 
 int main()
 {
-    runDay4_2();
+    runDay6_2();
     return 0;
 }
 
@@ -81,6 +87,44 @@ void runDay4_2()
     std::ifstream inputStream(filePath);
     int cals = getOverlappingPairCount(inputStream, false);
     std::cout << cals << std::endl;
+}
+
+void runDay5()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input5.txt");
+    std::ifstream inputStream(filePath);
+    auto res = getTopCrates(inputStream, 9);
+    std::cout << res << std::endl;
+}
+
+void runDay5_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input5.txt");
+    std::ifstream inputStream(filePath);
+    auto res = getTopCrates(inputStream, 9, false);
+    std::cout << res << std::endl;
+}
+
+
+void runDay6()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input6.txt");
+    std::ifstream inputStream(filePath);
+    std::string line;
+    getline(inputStream, line);
+    auto res = getMarkerLocation(line, 4);
+    std::cout << res << std::endl;
+}
+
+
+void runDay6_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input6.txt");
+    std::ifstream inputStream(filePath);
+    std::string line;
+    getline(inputStream, line);
+    auto res = getMarkerLocation(line, 14);
+    std::cout << res << std::endl;
 }
 
 

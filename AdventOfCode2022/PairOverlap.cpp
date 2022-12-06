@@ -1,3 +1,4 @@
+#pragma once
 #include <istream>
 #include <string>
 #include <vector>
@@ -15,8 +16,6 @@ std::vector<std::string> split(char delimiter, std::string input)
 	splitString.push_back(input);
 	return splitString;
 }
-
-
 
 struct Assignment
 {
