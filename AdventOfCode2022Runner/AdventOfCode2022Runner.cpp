@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include <chrono>
-#include "CalorieCounting.h"
-#include "RockPaperScissors.h"
-#include "Rucksack.h"
-#include "PairOverlap.h"
-#include "SupplyStacks.h"
-#include "TuningTrouble.h"
+#include "../AdventOfCode2022/CalorieCounting.h"
+#include "../AdventOfCode2022/RockPaperScissors.h"
+#include "../AdventOfCode2022/Rucksack.h"
+#include "../AdventOfCode2022/PairOverlap.h"
+#include "../AdventOfCode2022/SupplyStacks.h"
+#include "../AdventOfCode2022/TuningTrouble.h"
+#include "../AdventOfCode2022/Directory.h"
+#include "../AdventOfCode2022/TreeMapper.h"
 
 void runDay1();
 void runDay2();
@@ -20,24 +22,15 @@ void runDay5();
 void runDay5_2();
 void runDay6();
 void runDay6_2();
+void runDay7();
+void runDay7_2();
+void runDay8();
+void runDay8_2();
 
 int main()
 {
-    runDay6_2();
+    runDay8_2();
     return 0;
-}
-
-void benchmarkDay1()
-{
-    CalorieCounting day1(3);
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input.txt");
-    std::ifstream inputStream(filePath);
-
-    std::stringstream strdata();
-    std::string line;
-
-    int cals = day1.getMaxCalories(inputStream);
-    std::cout << cals << std::endl;
 }
 
 void runDay1()
@@ -125,6 +118,50 @@ void runDay6_2()
     getline(inputStream, line);
     auto res = getMarkerLocation(line, 14);
     std::cout << res << std::endl;
+}
+
+void runDay7()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input7.txt");
+    std::ifstream inputStream(filePath);
+    auto dir = Directory::buildDirectory(inputStream);
+    int res = 0;
+    dir->getSize(res);
+    std::cout << res << std::endl;
+}
+
+void runDay7_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input7.txt");
+    std::ifstream inputStream(filePath);
+    auto rootDir = Directory::buildDirectory(inputStream);
+    int total = INT_MAX;
+    int used = rootDir->getSize();
+    int free = 70000000 - used;
+    int needed = 30000000 - free;
+    int a = rootDir->getSizeGreaterThan(total, needed);
+    // assert
+    std::cout << total << std::endl;
+}
+
+void runDay8()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input8.txt");
+    std::ifstream inputStream(filePath);
+    auto visibleTreeCount = get_visible_tree_count(inputStream);
+
+    // assert
+    std::cout << visibleTreeCount << std::endl;
+}
+
+void runDay8_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input8.txt");
+    std::ifstream inputStream(filePath);
+    auto visibleTreeCount = getBestScenicScore(inputStream);
+
+    // assert
+    std::cout << visibleTreeCount << std::endl;
 }
 
 
