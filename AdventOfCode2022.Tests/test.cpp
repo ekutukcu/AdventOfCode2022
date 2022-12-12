@@ -7,6 +7,7 @@
 #include "../AdventOfCode2022/TuningTrouble.h"
 #include "../adventofcode2022/Directory.h"
 #include "../AdventOfCode2022/TreeMapper.h"
+#include "../AdventOfCode2022/RopeBridge.h"
 
 namespace AdventOfCode2022Tests
 {
@@ -444,5 +445,62 @@ namespace AdventOfCode2022Tests
 		EXPECT_EQ(3, treeMap[0][0]);
 		EXPECT_EQ(0, treeMap[0][1]);
 		EXPECT_EQ(3, treeMap[0][2]);
+	}
+
+	TEST(RopeBridge, getVisitedPointCount) {
+		// arrange
+		std::string lines = "R 4"
+			"\nU 4"
+			"\nL 3"
+			"\nD 1"
+			"\nR 4"
+			"\nD 1"
+			"\nL 5"
+			"\nR 2";
+		std::stringstream strStream(lines);
+
+		// act
+		auto pointsVisited = getVisitedPointCount(strStream,2);
+
+		// assert
+		EXPECT_EQ(13, pointsVisited);
+	}
+
+	TEST(RopeBridge, getVisitedPointCountManyPoint) {
+		// arrange
+		std::string lines = "R 4"
+			"\nU 4"
+			"\nL 3"
+			"\nD 1"
+			"\nR 4"
+			"\nD 1"
+			"\nL 5"
+			"\nR 2";
+		std::stringstream strStream(lines);
+
+		// act
+		auto pointsVisited = getVisitedPointCount(strStream, 10);
+
+		// assert
+		EXPECT_EQ(1, pointsVisited);
+	}
+
+	TEST(RopeBridge, getVisitedPointCountManyPoint2) {
+		// arrange
+		std::string lines = "R 5"
+			"\nU 8"
+			"\nL 8"
+			"\nD 3"
+			"\nR 17"
+			"\nD 10"
+			"\nL 25"
+			"\nU 20";
+		std::stringstream strStream(lines);
+
+		// act
+		auto pointsVisited = getVisitedPointCount(strStream, 10);
+
+		// assert
+		EXPECT_EQ(36, pointsVisited);
 	}
 }

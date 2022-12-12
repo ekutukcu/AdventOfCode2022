@@ -145,6 +145,7 @@
     <ClInclude Include="CalorieCounting.h" />
     <ClInclude Include="PairOverlap.h" />
     <ClInclude Include="RockPaperScissors.h" />
+    <ClInclude Include="RopeBridge.h" />
     <ClInclude Include="Rucksack.h" />
     <ClInclude Include="SupplyStacks.h" />
     <ClInclude Include="TreeMapper.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="CalorieCounting.cpp" />
     <ClCompile Include="PairOverlap.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />
+    <ClCompile Include="RopeBridge.cpp" />
     <ClCompile Include="Rucksack.cpp" />
     <ClCompile Include="SupplyStacks.cpp" />
     <ClCompile Include="TuningTrouble.cpp" />

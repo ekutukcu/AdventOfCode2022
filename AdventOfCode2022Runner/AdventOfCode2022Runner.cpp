@@ -11,27 +11,7 @@
 #include "../AdventOfCode2022/TuningTrouble.h"
 #include "../AdventOfCode2022/Directory.h"
 #include "../AdventOfCode2022/TreeMapper.h"
-
-void runDay1();
-void runDay2();
-void runDay3();
-void runDay3_2();
-void runDay4();
-void runDay4_2();
-void runDay5();
-void runDay5_2();
-void runDay6();
-void runDay6_2();
-void runDay7();
-void runDay7_2();
-void runDay8();
-void runDay8_2();
-
-int main()
-{
-    runDay8_2();
-    return 0;
-}
+#include "../AdventOfCode2022/RopeBridge.h"
 
 void runDay1()
 {
@@ -164,19 +144,27 @@ void runDay8_2()
     std::cout << visibleTreeCount << std::endl;
 }
 
+void runDay9()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input9.txt");
+    std::ifstream inputStream(filePath);
+    auto visitedPoints = getVisitedPointCount(inputStream,2);
 
-void benchmark(void(*func)(), int repeat, int number_runs) {
-    double smallest = std::numeric_limits<double>::infinity();
-    for (int i = 0; i < repeat; i++) {
-        auto t0 = std::chrono::high_resolution_clock::now();
-        for (int j = 0; j < number_runs; j++) {
-            func();
-        }
-        auto t1 = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> delta = t1 - t0;
-        if (delta.count() < smallest) {
-            smallest = delta.count();
-        }
-    }
-    std::cout << smallest << std::endl;
+    // assert
+    std::cout << visitedPoints << std::endl;
+}
+void runDay9_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input9.txt");
+    std::ifstream inputStream(filePath);
+    auto visitedPoints = getVisitedPointCount(inputStream, 10);
+
+    // assert
+    std::cout << visitedPoints << std::endl;
+}
+
+int main()
+{
+    runDay9_2();
+    return 0;
 }
