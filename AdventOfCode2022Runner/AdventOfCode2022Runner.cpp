@@ -12,6 +12,7 @@
 #include "../AdventOfCode2022/Directory.h"
 #include "../AdventOfCode2022/TreeMapper.h"
 #include "../AdventOfCode2022/RopeBridge.h"
+#include "../AdventOfCode2022/CathodeRayTube.h"
 
 void runDay1()
 {
@@ -162,9 +163,37 @@ void runDay9_2()
     // assert
     std::cout << visitedPoints << std::endl;
 }
+void runDay10()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input10.txt");
+    std::ifstream inputStream(filePath);
+    CathodeRayTube tube;
+    tube.setLogPoint(20);
+    tube.setLogPoint(60);
+    tube.setLogPoint(100);
+    tube.setLogPoint(140);
+    tube.setLogPoint(180);
+    tube.setLogPoint(220);
+
+    auto result = CathodeRayTube::processStream(inputStream, tube);
+
+    // assert
+    std::cout << result << std::endl;
+}
+
+void runDay10_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input10.txt");
+    std::ifstream inputStream(filePath);
+    CathodeRayTube tube;
+    CathodeRayTube::processStream(inputStream, tube);
+
+    // assert
+    std::cout << tube.getCrtDisplay() << std::endl;
+}
 
 int main()
 {
-    runDay9_2();
+    runDay10_2();
     return 0;
 }

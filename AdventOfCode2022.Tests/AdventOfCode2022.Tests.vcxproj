@@ -47,6 +47,7 @@
     </ClCompile>
     <ClCompile Include="TestCalorieCounting.cpp" />
     <ClCompile Include="TestCampCleaning.cpp" />
+    <ClCompile Include="TestCathodeRayTube.cpp" />
     <ClCompile Include="TestDirectory.cpp" />
     <ClCompile Include="TestRockPaperScissors.cpp" />
     <ClCompile Include="TestRopeBridge.cpp" />
