@@ -115,6 +115,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="CalorieCounting.h" />
     <ClInclude Include="CathodeRayTube.h" />
+    <ClInclude Include="MonkeyStateMachine.h" />
     <ClInclude Include="PairOverlap.h" />
     <ClInclude Include="RockPaperScissors.h" />
     <ClInclude Include="RopeBridge.h" />
@@ -158,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="CalorieCounting.cpp" />
     <ClCompile Include="CathodeRayTube.cpp" />
+    <ClCompile Include="MonkeyStateMachine.cpp" />
     <ClCompile Include="PairOverlap.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />
     <ClCompile Include="RopeBridge.cpp" />

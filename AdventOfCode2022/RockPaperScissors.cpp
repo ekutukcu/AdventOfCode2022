@@ -24,7 +24,7 @@ int RockPaperScissors::calculateScoreShapePrediction(std::istream& inputStream)
 		}
 		else
 		{
-			score += 0;
+			score += 0; 
 		}
 		score += myMove - 'W';
 		inputStream >> theirMove;

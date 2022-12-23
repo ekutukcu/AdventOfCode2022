@@ -37,7 +37,6 @@ void CathodeRayTube::setLogPoint(int cycleNumber)
 
 void CathodeRayTube::logSignalStrength()
 {
-
 	cycles++;
 	if (logPoints.count(cycles) == 1)
 	{
