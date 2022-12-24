@@ -13,6 +13,7 @@
 #include "../AdventOfCode2022/TreeMapper.h"
 #include "../AdventOfCode2022/RopeBridge.h"
 #include "../AdventOfCode2022/CathodeRayTube.h"
+#include "../AdventOfCode2022/MonkeyStateMachine.h"
 
 void runDay1()
 {
@@ -192,8 +193,21 @@ void runDay10_2()
     std::cout << tube.getCrtDisplay() << std::endl;
 }
 
+void runDay11()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input11.txt");
+
+    std::ifstream inputStream(filePath);
+    Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
+
+    // act
+    auto monkey_business = monkeyKeepAway.calculate_monkey_business(20);
+    // assert
+    std::cout << monkey_business << std::endl;
+}
+
 int main()
 {
-    runDay10_2();
+    runDay11();
     return 0;
 }

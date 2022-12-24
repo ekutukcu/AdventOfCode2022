@@ -4,20 +4,20 @@
 #include <optional>
 namespace Monkeys
 {
-	MonkeyState::MonkeyState(std::vector<int> items, Operation operation, int divisor): items(items), operation(operation), test_divisor(divisor)
+	MonkeyState::MonkeyState(std::vector<long> items, Operation operation, int divisor, int true_monkey, int false_monkey): items(items), operation(operation), test_divisor(divisor), true_monkey(true_monkey), false_monkey(false_monkey)
 	{
 
 	}
 	MonkeyState MonkeyState::parse(std::istream& inputStream)
 	{
-		std::vector<int> starting_items;
+		std::vector<long> starting_items;
 		std::string line="";
 		while (line == "" && !inputStream.eof())
 		{
 			getline(inputStream, line);
 		}
 
-		std::optional<int> value = {};
+		std::optional<long> value = {};
 
 		line = line.substr(sizeof("Monkey ") - 1);
 		int monkeyNumber = std::stoi(line);
@@ -42,7 +42,7 @@ namespace Monkeys
 		auto false_monkey= std::stoi(line.substr(line.find_last_of(' ')));
 
 
-		return MonkeyState(starting_items, op, 0);
+		return MonkeyState(starting_items, op, div, true_monkey, false_monkey);
 	}
 
 	Operation Operation::parse(std::istream& inputStream)
@@ -52,20 +52,20 @@ namespace Monkeys
 		line = line.substr(line.find_first_of('=') + 2);
 		std::stringstream str_stream(line);
 
-		std::unique_ptr<Operand> left;
-		std::unique_ptr<Operand> right;
+		std::optional<long> left;
+		std::optional<long> right;
 
 		if (str_stream.peek() == 'o')
 		{
 			str_stream.seekg(3);
-			left = std::make_unique<OldValue>(OldValue());
+			left = {};
 		}
 		else
 		{
 			int value = 0;
 			str_stream >> value;
 
-			left = std::make_unique<LiteralValue>(LiteralValue(value));
+			left = value;
 		}
 
 		// get operator
@@ -89,61 +89,128 @@ namespace Monkeys
 		default:
 			throw std::invalid_argument("Must have a valid operator specified");
 		}
-
+		char b = str_stream.peek();
+		str_stream.seekg(1, std::ios::cur);
+		char c = str_stream.peek();
 		if (str_stream.peek() == 'o')
 		{
 			str_stream.seekg(3);
-			left = std::make_unique<OldValue>(OldValue());
+			right = {};
 		}
 		else
 		{
 			int value = 0;
 			str_stream >> value;
 
-			right = std::make_unique<LiteralValue>(LiteralValue(value));
+			right = value;
 		}
-		return Operation(std::move(left), std::move(right), parsed_op);
+
+		return Operation(left, right, parsed_op);
 		
 	}
 
-	Operation::Operation(std::unique_ptr<Operand> left, std::unique_ptr<Operand> right, Op op): left(std::move(left)), right(std::move(right)), op(op)
+	Operation::Operation(std::optional<long> left, std::optional<long> right, Op op): left(left), right(right), op(op)
 	{
 
 	}
 
-	Operation::Operation(const Operation& other) : left(other.left->clone()), right(other.right->clone()), op(other.op)
+	MonkeyKeepAway::MonkeyKeepAway(std::istream& input)
 	{
-	}
-
-	std::unique_ptr<Operand> Operand::parse(std::string inputStr)
-	{
-		char next_char = inputStr[0];
-		if (isdigit(next_char))
+		while (!input.eof() && input.peek()!=-1)
 		{
-			int number = std::stoi(inputStr);
-			return std::make_unique<LiteralValue>(LiteralValue(number));
-		}
-		else
-		{
-			return std::make_unique<OldValue>(OldValue());
+			auto ch = input.peek();
+			auto monkey = MonkeyState::parse(input);
+			states.push_back(monkey);
 		}
 	}
-	std::unique_ptr<Operand> Operand::clone() const
-	{ 
-		return std::unique_ptr<Operand>(clone_impl());
-	}
-	int LiteralValue::getValue()
+	int MonkeyKeepAway::calculate_monkey_business(int round_count)
 	{
-		return value;
-	}
+		std::vector<long> monkey_business;
 
-	LiteralValue::LiteralValue(int value): value{value}
-	{
-		
-	}
+		for (int j = 0; j < states.size(); j++)
+		{
+			monkey_business.push_back(0);
+		}
 
-	int OldValue::getValue()
-	{
-		return 0;
+		for (int i = 0; i < round_count; i++)
+		{
+			for (int j = 0; j < states.size(); j++)
+			{
+				MonkeyState& current_state = states[j];
+				for (int k = 0; k < current_state.items.size(); k++)
+				{
+					long new_value;
+					long left, right;
+					// get left
+					if (current_state.operation.left.has_value())
+					{
+						left = current_state.operation.left.value();
+					}
+					else
+					{
+						left = current_state.items[k];
+					}
+
+					// get right
+					if (current_state.operation.right.has_value())
+					{
+						right = current_state.operation.right.value();
+					}
+					else
+					{
+						right = current_state.items[k];
+					}
+
+
+					switch (current_state.operation.op)
+					{
+					case Op::add:
+						new_value = left + right;
+						break;
+					case Op::mul:
+						new_value = left * right;
+						break;
+					case Op::div:
+						new_value = left / right;
+						break;
+					case Op::sub:
+						new_value = left - right;
+						break;
+
+					default:
+						throw std::exception();
+					}
+
+					new_value /= 3;
+
+					if (new_value % current_state.test_divisor == 0)
+					{
+						states[current_state.true_monkey].items.push_back(new_value);
+					}
+					else
+					{
+						states[current_state.false_monkey].items.push_back(new_value);
+					}
+					monkey_business[j]++;
+				}
+
+				current_state.items.clear();
+			}
+		}
+
+		int max1=0, max2=0;
+		for (const int& m: monkey_business)
+		{
+			if (m >= max1)
+			{
+				max2 = max1;
+				max1 = m;
+			}
+			else if (m >= max2)
+			{
+				max2 = m;
+			}
+		}
+		return max1*max2;
 	}
 }

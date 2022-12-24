@@ -1,6 +1,7 @@
 #include <string>
 #include <istream>
 #include <vector>
+#include <optional>
 
 namespace Monkeys
 {
@@ -12,54 +13,39 @@ namespace Monkeys
 		sub
 	} Op;
 
-	struct Operand
-	{
-		static std::unique_ptr<Operand> parse(std::string inputStr);
-		virtual int getValue() = 0;    
-		std::unique_ptr<Operand> clone() const;
-	protected:
-		virtual Operand* clone_impl() const = 0;
-	};
-
-	struct OldValue : public Operand
-	{
-		virtual int getValue() override;
-	protected:
-		virtual OldValue* clone_impl() const override { return new OldValue(*this); };
-	};
-
-	struct LiteralValue : public Operand
-	{
-		int value;
-		LiteralValue(int value);
-		virtual int getValue() override;
-
-	protected:
-		virtual LiteralValue* clone_impl() const override { return new LiteralValue(*this); };
-	};
 
 
 	struct Operation
 	{
-		std::unique_ptr<Operand> left;
-		std::unique_ptr<Operand>  right;
+		std::optional<long> left;
+		std::optional<long>  right;
 		Op op;
 
-		Operation(std::unique_ptr<Operand> left, std::unique_ptr<Operand> right, Op op);
+		Operation(std::optional<long> left, std::optional<long> right, Op op);
 
-		Operation(const Operation& other);
 
 		static Operation parse(std::istream& inputStream);
 	};
 
 	struct MonkeyState
 	{
-		std::vector<int> items;
+		std::vector<long> items;
 		Operation operation;
 		int test_divisor;
 
-		MonkeyState(std::vector<int> items, Operation operation, int divisor);
+		int true_monkey;
+		int false_monkey;
+
+		MonkeyState(std::vector<long> items, Operation operation, int divisor, int true_monkey, int false_monkey);
 
 		static MonkeyState parse(std::istream& inputStream);
+	};
+
+	class MonkeyKeepAway
+	{
+		std::vector<MonkeyState> states;
+	public:
+		MonkeyKeepAway(std::istream& input);
+		int calculate_monkey_business(int round_count);
 	};
 }
