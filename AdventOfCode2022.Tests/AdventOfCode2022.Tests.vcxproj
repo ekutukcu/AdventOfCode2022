@@ -49,6 +49,7 @@
     <ClCompile Include="TestCampCleaning.cpp" />
     <ClCompile Include="TestCathodeRayTube.cpp" />
     <ClCompile Include="TestDirectory.cpp" />
+    <ClCompile Include="TestHillClimbing.cpp" />
     <ClCompile Include="TestMonkeyState.cpp" />
     <ClCompile Include="TestRockPaperScissors.cpp" />
     <ClCompile Include="TestRopeBridge.cpp" />

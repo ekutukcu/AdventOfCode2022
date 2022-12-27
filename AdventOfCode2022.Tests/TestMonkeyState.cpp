@@ -85,6 +85,7 @@ TEST(MonkeyState, ParsesTwoMonkeysCorrectly) {
 	EXPECT_EQ(11, monkey2.test_divisor);
 }
 
+
 TEST(MonkeyKeepAway, calculate_monkey_business) {
 	// arrange
 	std::string monkey_str = "Monkey 0:"
@@ -119,10 +120,50 @@ TEST(MonkeyKeepAway, calculate_monkey_business) {
 	Monkeys::MonkeyKeepAway monkeyKeepAway(strStream);
 
 	// act
-	auto monkey_business = monkeyKeepAway.calculate_monkey_business(20);
+	auto monkey_business = monkeyKeepAway.calculate_monkey_business(20, 3);
 
 	// assert
 	EXPECT_EQ(10605, monkey_business);
+}
+
+TEST(MonkeyKeepAway, calculate_monkey_business_10000_rounds) {
+	// arrange
+	std::string monkey_str = "Monkey 0:"
+		"\n  Starting items: 79, 98"
+		"\n  Operation: new = old * 19"
+		"\n  Test: divisible by 23"
+		"\n    If true: throw to monkey 2"
+		"\n    If false: throw to monkey 3"
+		"\n"
+		"\nMonkey 1:"
+		"\n  Starting items: 54, 65, 75, 74"
+		"\n  Operation: new = old + 6"
+		"\n  Test: divisible by 19"
+		"\n    If true: throw to monkey 2"
+		"\n    If false: throw to monkey 0"
+		"\n"
+		"\nMonkey 2:"
+		"\n  Starting items: 79, 60, 97"
+		"\n  Operation: new = old * old"
+		"\n  Test: divisible by 13"
+		"\n    If true: throw to monkey 1"
+		"\n    If false: throw to monkey 3"
+		"\n"
+		"\nMonkey 3:"
+		"\n  Starting items: 74"
+		"\n  Operation: new = old + 3"
+		"\n  Test: divisible by 17"
+		"\n    If true: throw to monkey 0"
+		"\n    If false: throw to monkey 1\n";
+	std::stringstream strStream(monkey_str);
+
+	Monkeys::MonkeyKeepAway monkeyKeepAway(strStream);
+
+	// act
+	auto monkey_business = monkeyKeepAway.calculate_monkey_business(10000, std::nullopt);
+
+	// assert
+	EXPECT_EQ(2713310158, monkey_business);
 }
 
 TEST(MonkeyKeepAway, calculate_monkey_business_8monkeys) {
@@ -134,8 +175,8 @@ TEST(MonkeyKeepAway, calculate_monkey_business_8monkeys) {
 	Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
 
 	// act
-	auto monkey_business = monkeyKeepAway.calculate_monkey_business(20);
+	auto monkey_business = monkeyKeepAway.calculate_monkey_business(20, 3);
 
 	// assert
-	EXPECT_EQ(56, monkey_business);
+	EXPECT_EQ(120384, monkey_business);
 }

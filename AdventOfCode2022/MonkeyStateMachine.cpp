@@ -4,13 +4,13 @@
 #include <optional>
 namespace Monkeys
 {
-	MonkeyState::MonkeyState(std::vector<long> items, Operation operation, int divisor, int true_monkey, int false_monkey): items(items), operation(operation), test_divisor(divisor), true_monkey(true_monkey), false_monkey(false_monkey)
+	MonkeyState::MonkeyState(std::vector<long long> items, Operation operation, int divisor, int true_monkey, int false_monkey): items(items), operation(operation), test_divisor(divisor), true_monkey(true_monkey), false_monkey(false_monkey)
 	{
 
 	}
 	MonkeyState MonkeyState::parse(std::istream& inputStream)
 	{
-		std::vector<long> starting_items;
+		std::vector<long long> starting_items;
 		std::string line="";
 		while (line == "" && !inputStream.eof())
 		{
@@ -109,7 +109,7 @@ namespace Monkeys
 		
 	}
 
-	Operation::Operation(std::optional<long> left, std::optional<long> right, Op op): left(left), right(right), op(op)
+	Operation::Operation(std::optional<long long> left, std::optional<long long> right, Op op): left(left), right(right), op(op)
 	{
 
 	}
@@ -123,13 +123,15 @@ namespace Monkeys
 			states.push_back(monkey);
 		}
 	}
-	int MonkeyKeepAway::calculate_monkey_business(int round_count)
+	long long MonkeyKeepAway::calculate_monkey_business(int round_count, std::optional<long long> divisor)
 	{
 		std::vector<long> monkey_business;
+		long long div = 1;
 
 		for (int j = 0; j < states.size(); j++)
 		{
 			monkey_business.push_back(0);
+			div *= states[j].test_divisor;
 		}
 
 		for (int i = 0; i < round_count; i++)
@@ -139,8 +141,8 @@ namespace Monkeys
 				MonkeyState& current_state = states[j];
 				for (int k = 0; k < current_state.items.size(); k++)
 				{
-					long new_value;
-					long left, right;
+					long long new_value;
+					long long left, right;
 					// get left
 					if (current_state.operation.left.has_value())
 					{
@@ -161,7 +163,6 @@ namespace Monkeys
 						right = current_state.items[k];
 					}
 
-
 					switch (current_state.operation.op)
 					{
 					case Op::add:
@@ -181,16 +182,28 @@ namespace Monkeys
 						throw std::exception();
 					}
 
-					new_value /= 3;
-
+					//auto div = 9699690;///(current_state.test_divisor);// / current_state.test_divisor;
+					if (divisor.has_value())
+					{
+						new_value /= divisor.value();
+					}
+					else
+					{
+						new_value %= div;// divisor;// %= 9699691;
+					}
 					if (new_value % current_state.test_divisor == 0)
 					{
+						//new_value %= current_state.test_divisor;
 						states[current_state.true_monkey].items.push_back(new_value);
 					}
 					else
 					{
+						//new_value %= current_state.test_divisor;
+
 						states[current_state.false_monkey].items.push_back(new_value);
 					}
+					
+
 					monkey_business[j]++;
 				}
 
@@ -198,7 +211,7 @@ namespace Monkeys
 			}
 		}
 
-		int max1=0, max2=0;
+		long long max1=0, max2=0;
 		for (const int& m: monkey_business)
 		{
 			if (m >= max1)

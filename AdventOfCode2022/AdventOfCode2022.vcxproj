@@ -116,12 +116,17 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Program Files\boost\boost_1_77_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -145,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="CalorieCounting.h" />
     <ClInclude Include="CathodeRayTube.h" />
+    <ClInclude Include="HillClimbing.h" />
     <ClInclude Include="MonkeyStateMachine.h" />
     <ClInclude Include="PairOverlap.h" />
     <ClInclude Include="RockPaperScissors.h" />
@@ -160,6 +166,7 @@
   <ItemGroup>
     <ClCompile Include="CalorieCounting.cpp" />
     <ClCompile Include="CathodeRayTube.cpp" />
+    <ClCompile Include="HillClimbing.cpp" />
     <ClCompile Include="MonkeyStateMachine.cpp" />
     <ClCompile Include="PairOverlap.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />

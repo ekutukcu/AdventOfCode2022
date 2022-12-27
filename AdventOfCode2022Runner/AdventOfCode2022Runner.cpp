@@ -201,13 +201,26 @@ void runDay11()
     Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
 
     // act
-    auto monkey_business = monkeyKeepAway.calculate_monkey_business(20);
+    auto monkey_business = monkeyKeepAway.calculate_monkey_business(20, 3);
+    // assert
+    std::cout << monkey_business << std::endl;
+}
+
+void runDay11_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input11.txt");
+
+    std::ifstream inputStream(filePath);
+    Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
+
+    // act
+    auto monkey_business = monkeyKeepAway.calculate_monkey_business(10000, std::nullopt);
     // assert
     std::cout << monkey_business << std::endl;
 }
 
 int main()
 {
-    runDay11();
+    runDay11_2();
     return 0;
 }
