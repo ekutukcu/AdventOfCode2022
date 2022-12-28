@@ -26,6 +26,24 @@
       <Project>{00616374-c676-449d-a340-6a5a748fe22c}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\input.txt" />
+    <Text Include="Data\input10.txt" />
+    <Text Include="Data\input11.txt" />
+    <Text Include="Data\input12.txt" />
+    <Text Include="Data\input13.txt" />
+    <Text Include="Data\input2.txt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </DeploymentContent>
+    </Text>
+    <Text Include="Data\input3.txt" />
+    <Text Include="Data\input4.txt" />
+    <Text Include="Data\input5.txt" />
+    <Text Include="Data\input6.txt" />
+    <Text Include="Data\input7.txt" />
+    <Text Include="Data\input8.txt" />
+    <Text Include="Data\input9.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

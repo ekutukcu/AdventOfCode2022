@@ -1,7 +1,7 @@
 
-#include "PairOverlap.h"
 #include "RopeBridge.h"
 #include <fstream>
+#include "../Day04/PairOverlap.h"
 int getVisitedPointCount(std::istream& inputStream, int numPoints)
 {
 	std::string inputLine;

@@ -1,6 +1,6 @@
 #include <cassert>
-#include "PairOverlap.h"
 #include "CathodeRayTube.h"
+#include "../Day04/PairOverlap.h"
 
 CathodeRayTube::CathodeRayTube() :x(1), power(0),cycles(0), crtDisplay("")
 {

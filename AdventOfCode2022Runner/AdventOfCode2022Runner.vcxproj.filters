@@ -19,4 +19,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\input.txt" />
+    <Text Include="Data\input2.txt" />
+    <Text Include="Data\input3.txt" />
+    <Text Include="Data\input4.txt" />
+    <Text Include="Data\input5.txt" />
+    <Text Include="Data\input6.txt" />
+    <Text Include="Data\input7.txt" />
+    <Text Include="Data\input8.txt" />
+    <Text Include="Data\input9.txt" />
+    <Text Include="Data\input10.txt" />
+    <Text Include="Data\input11.txt" />
+    <Text Include="Data\input12.txt" />
+    <Text Include="Data\input13.txt" />
+  </ItemGroup>
 </Project>

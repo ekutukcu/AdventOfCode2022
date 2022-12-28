@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/Directory.h"
+#include "../AdventOfCode2022/Day07/Directory.h"
 
 
 TEST(Directory, cd) {

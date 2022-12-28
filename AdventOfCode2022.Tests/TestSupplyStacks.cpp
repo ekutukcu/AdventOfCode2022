@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "../AdventOfCode2022/SupplyStacks.h"
 #include "gtest/gtest.h"
+#include "../AdventOfCode2022/Day05/SupplyStacks.h"
 
 TEST(SupplyStacks, getTopCratesIndividually) {
 	// arrange

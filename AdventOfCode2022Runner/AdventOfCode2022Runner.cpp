@@ -19,7 +19,7 @@
 void runDay1()
 {
     CalorieCounting day1(3);
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input.txt");
     std::ifstream inputStream(filePath);
     int cals = day1.getMaxCalories(inputStream);
     std::cout << cals << std::endl;
@@ -28,14 +28,14 @@ void runDay1()
 void runDay2()
 {
     RockPaperScissors day2;
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input2.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input2.txt");
     std::ifstream inputStream(filePath);
     int cals = day2.calculateScoreResultPredication(inputStream);
     std::cout << cals << std::endl;
 }
 void runDay3()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input3.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input3.txt");
     std::ifstream inputStream(filePath);
     int cals = Rucksack::getMissingItemsTotal(inputStream);
     std::cout << cals << std::endl;
@@ -43,7 +43,7 @@ void runDay3()
 
 void runDay3_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input3.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input3.txt");
     std::ifstream inputStream(filePath);
     int cals = Rucksack::getBadgesTotal(inputStream);
     std::cout << cals << std::endl;
@@ -51,7 +51,7 @@ void runDay3_2()
 
 void runDay4()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input4.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input4.txt");
     std::ifstream inputStream(filePath);
     int cals = getOverlappingPairCount(inputStream, true);
     std::cout << cals << std::endl;
@@ -59,7 +59,7 @@ void runDay4()
 
 void runDay4_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input4.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input4.txt");
     std::ifstream inputStream(filePath);
     int cals = getOverlappingPairCount(inputStream, false);
     std::cout << cals << std::endl;
@@ -67,7 +67,7 @@ void runDay4_2()
 
 void runDay5()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input5.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input5.txt");
     std::ifstream inputStream(filePath);
     auto res = getTopCrates(inputStream, 9);
     std::cout << res << std::endl;
@@ -75,7 +75,7 @@ void runDay5()
 
 void runDay5_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input5.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input5.txt");
     std::ifstream inputStream(filePath);
     auto res = getTopCrates(inputStream, 9, false);
     std::cout << res << std::endl;
@@ -84,7 +84,7 @@ void runDay5_2()
 
 void runDay6()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input6.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input6.txt");
     std::ifstream inputStream(filePath);
     std::string line;
     getline(inputStream, line);
@@ -95,7 +95,7 @@ void runDay6()
 
 void runDay6_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input6.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input6.txt");
     std::ifstream inputStream(filePath);
     std::string line;
     getline(inputStream, line);
@@ -105,7 +105,7 @@ void runDay6_2()
 
 void runDay7()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input7.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input7.txt");
     std::ifstream inputStream(filePath);
     auto dir = Directory::buildDirectory(inputStream);
     int res = 0;
@@ -115,7 +115,7 @@ void runDay7()
 
 void runDay7_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input7.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input7.txt");
     std::ifstream inputStream(filePath);
     auto rootDir = Directory::buildDirectory(inputStream);
     int total = INT_MAX;
@@ -129,7 +129,7 @@ void runDay7_2()
 
 void runDay8()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input8.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input8.txt");
     std::ifstream inputStream(filePath);
     auto visibleTreeCount = get_visible_tree_count(inputStream);
 
@@ -139,7 +139,7 @@ void runDay8()
 
 void runDay8_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input8.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input8.txt");
     std::ifstream inputStream(filePath);
     auto visibleTreeCount = getBestScenicScore(inputStream);
 
@@ -149,7 +149,7 @@ void runDay8_2()
 
 void runDay9()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input9.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input9.txt");
     std::ifstream inputStream(filePath);
     auto visitedPoints = getVisitedPointCount(inputStream,2);
 
@@ -158,7 +158,7 @@ void runDay9()
 }
 void runDay9_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input9.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input9.txt");
     std::ifstream inputStream(filePath);
     auto visitedPoints = getVisitedPointCount(inputStream, 10);
 
@@ -167,7 +167,7 @@ void runDay9_2()
 }
 void runDay10()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input10.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input10.txt");
     std::ifstream inputStream(filePath);
     CathodeRayTube tube;
     tube.setLogPoint(20);
@@ -185,7 +185,7 @@ void runDay10()
 
 void runDay10_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input10.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input10.txt");
     std::ifstream inputStream(filePath);
     CathodeRayTube tube;
     CathodeRayTube::processStream(inputStream, tube);
@@ -196,7 +196,7 @@ void runDay10_2()
 
 void runDay11()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input11.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input11.txt");
 
     std::ifstream inputStream(filePath);
     Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
@@ -209,7 +209,7 @@ void runDay11()
 
 void runDay11_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input11.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input11.txt");
 
     std::ifstream inputStream(filePath);
     Monkeys::MonkeyKeepAway monkeyKeepAway(inputStream);
@@ -223,7 +223,7 @@ void runDay11_2()
 
 void runDay12()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input12.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input12.txt");
 
     std::ifstream inputStream(filePath);
 
@@ -235,7 +235,7 @@ void runDay12()
 
 void runDay12_2()
 {
-    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input12.txt");
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input12.txt");
 
     std::ifstream inputStream(filePath);
 
