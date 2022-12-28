@@ -1,6 +1,6 @@
 #include "Directory.h"
-#include "PairOverlap.h"
 #include <stdexcept>
+#include "../Day04/PairOverlap.h"
 
 
 Directory::Directory(Directory* parent1, std::string path):parent(parent1), directoryName(path)

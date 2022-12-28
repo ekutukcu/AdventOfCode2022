@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/RopeBridge.h"
-
+#include "../AdventOfCode2022/Day09/RopeBridge.h"
 TEST(RopeBridge, getVisitedPointCount) {
 	// arrange
 	std::string lines = "R 4"

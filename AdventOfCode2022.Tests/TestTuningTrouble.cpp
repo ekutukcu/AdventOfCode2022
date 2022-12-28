@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/TuningTrouble.h"
+#include "../AdventOfCode2022/Day06/TuningTrouble.h"
 
 TEST(TuningTrouble, getMarkerLocation) {
 	// arrange

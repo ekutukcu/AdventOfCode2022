@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/CalorieCounting.h"
+#include "../AdventOfCode2022/Day01/CalorieCounting.h"
 
 TEST(CalorieCounting, HandlesTwoReindeer) {
 	// arrange

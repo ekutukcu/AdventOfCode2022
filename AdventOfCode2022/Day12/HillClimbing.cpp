@@ -1,6 +1,6 @@
 
 #include "HillClimbing.h"
-
+#include "../Day09/RopeBridge.h"
 
 
 std::unordered_map<Point, int> get_mapped_points(std::vector<std::string> lines, std::unordered_map<Point, int> unseen_points, const Point& start)
@@ -16,11 +16,11 @@ std::unordered_map<Point, int> get_mapped_points(std::vector<std::string> lines,
 	{
 		if (seen_points.contains(tmp))
 		{
-			seen_points [tmp] = min(best_distance, seen_points[tmp]);
+			seen_points [tmp] = std::min(best_distance, seen_points[tmp]);
 		}
 		else if (unseen_points.contains(tmp))
 		{
-			unseen_points[tmp] = min(best_distance, unseen_points[tmp]);
+			unseen_points[tmp] = std::min(best_distance, unseen_points[tmp]);
 		}
 
 	};
@@ -223,7 +223,7 @@ int get_global_shortest_path(std::istream& input_stream)
 				continue;
 			}
 			auto new_dist = seen_points[*end];
-			min_dist = min(min_dist, new_dist);
+			min_dist = std::min(min_dist, new_dist);
 		}
 	}
 	return min_dist;

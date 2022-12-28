@@ -1,7 +1,7 @@
 #include "MonkeyStateMachine.h"
-#include "PairOverlap.h"
 #include <sstream>
 #include <optional>
+#include "../Day04/PairOverlap.h"
 namespace Monkeys
 {
 	MonkeyState::MonkeyState(std::vector<long long> items, Operation operation, int divisor, int true_monkey, int false_monkey): items(items), operation(operation), test_divisor(divisor), true_monkey(true_monkey), false_monkey(false_monkey)

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/Rucksack.h"
+#include "../AdventOfCode2022/Day03/Rucksack.h"
 
 
 TEST(Rucksack, getMissingItemsTotalHandlesFiveLines) {

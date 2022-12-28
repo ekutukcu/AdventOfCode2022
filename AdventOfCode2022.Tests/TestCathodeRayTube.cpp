@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/CathodeRayTube.h"
+#include "../AdventOfCode2022/Day10/CathodeRayTube.h"
 
 TEST(CathodeRayTube, CalculateSignalPowerCorrectly) {
 	std::string input = "addx 15"

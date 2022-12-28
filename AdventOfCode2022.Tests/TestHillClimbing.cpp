@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/HillClimbing.h"
-
+#include "../AdventOfCode2022/Day12/HillClimbing.h"
 TEST(TestHillClimbing, get_shortest_path) {
 	// arrange
 	std::string input = "Sabqponm"

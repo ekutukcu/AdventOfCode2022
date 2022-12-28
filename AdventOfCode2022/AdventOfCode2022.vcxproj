@@ -148,33 +148,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CalorieCounting.h" />
-    <ClInclude Include="CathodeRayTube.h" />
-    <ClInclude Include="HillClimbing.h" />
-    <ClInclude Include="MonkeyStateMachine.h" />
-    <ClInclude Include="PairOverlap.h" />
-    <ClInclude Include="RockPaperScissors.h" />
-    <ClInclude Include="RopeBridge.h" />
-    <ClInclude Include="Rucksack.h" />
-    <ClInclude Include="SupplyStacks.h" />
-    <ClInclude Include="TreeMapper.h" />
-    <ClInclude Include="TuningTrouble.h" />
-    <ClInclude Include="Directory.h" />
+    <ClInclude Include="Day01\CalorieCounting.h" />
+    <ClInclude Include="Day10\CathodeRayTube.h" />
+    <ClInclude Include="Day12\HillClimbing.h" />
+    <ClInclude Include="Day11\MonkeyStateMachine.h" />
+    <ClInclude Include="Day04\PairOverlap.h" />
+    <ClInclude Include="Day02\RockPaperScissors.h" />
+    <ClInclude Include="Day09\RopeBridge.h" />
+    <ClInclude Include="Day03\Rucksack.h" />
+    <ClInclude Include="Day05\SupplyStacks.h" />
+    <ClInclude Include="Day08\TreeMapper.h" />
+    <ClInclude Include="Day06\TuningTrouble.h" />
+    <ClInclude Include="Day07\Directory.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CalorieCounting.cpp" />
-    <ClCompile Include="CathodeRayTube.cpp" />
-    <ClCompile Include="HillClimbing.cpp" />
-    <ClCompile Include="MonkeyStateMachine.cpp" />
-    <ClCompile Include="PairOverlap.cpp" />
-    <ClCompile Include="RockPaperScissors.cpp" />
-    <ClCompile Include="RopeBridge.cpp" />
-    <ClCompile Include="Rucksack.cpp" />
-    <ClCompile Include="SupplyStacks.cpp" />
-    <ClCompile Include="TuningTrouble.cpp" />
-    <ClCompile Include="Directory.cpp" />
+    <ClCompile Include="Day01\CalorieCounting.cpp" />
+    <ClCompile Include="Day10\CathodeRayTube.cpp" />
+    <ClCompile Include="Day12\HillClimbing.cpp" />
+    <ClCompile Include="Day11\MonkeyStateMachine.cpp" />
+    <ClCompile Include="Day04\PairOverlap.cpp" />
+    <ClCompile Include="Day02\RockPaperScissors.cpp" />
+    <ClCompile Include="Day09\RopeBridge.cpp" />
+    <ClCompile Include="Day03\Rucksack.cpp" />
+    <ClCompile Include="Day05\SupplyStacks.cpp" />
+    <ClCompile Include="Day06\TuningTrouble.cpp" />
+    <ClCompile Include="Day07\Directory.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

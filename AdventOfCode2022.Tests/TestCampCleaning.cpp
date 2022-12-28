@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/PairOverlap.h"
+#include "../AdventOfCode2022/Day04/PairOverlap.h"
 
 
 TEST(CampCleaning, getOverlappingPairCountFull) {

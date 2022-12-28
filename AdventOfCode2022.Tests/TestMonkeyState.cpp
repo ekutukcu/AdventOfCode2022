@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "gtest/gtest.h"
 #include <fstream>
-#include "../AdventOfCode2022/MonkeyStateMachine.h"
+#include "../AdventOfCode2022/Day11/MonkeyStateMachine.h"
 
 TEST(MonkeyState, ParsesMonkeyCorrectly) {
 	// arrange

@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "../AdventOfCode2022/RockPaperScissors.h"
 #include "gtest/gtest.h"
+#include "../AdventOfCode2022/Day02/RockPaperScissors.h"
 
 TEST(RockPaperScissors, HandlesSingleGame) {
 	// arrange

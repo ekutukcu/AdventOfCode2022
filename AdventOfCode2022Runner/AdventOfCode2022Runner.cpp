@@ -3,18 +3,18 @@
 
 #include <iostream>
 #include <chrono>
-#include "../AdventOfCode2022/CalorieCounting.h"
-#include "../AdventOfCode2022/RockPaperScissors.h"
-#include "../AdventOfCode2022/Rucksack.h"
-#include "../AdventOfCode2022/PairOverlap.h"
-#include "../AdventOfCode2022/SupplyStacks.h"
-#include "../AdventOfCode2022/TuningTrouble.h"
-#include "../AdventOfCode2022/Directory.h"
-#include "../AdventOfCode2022/TreeMapper.h"
-#include "../AdventOfCode2022/RopeBridge.h"
-#include "../AdventOfCode2022/CathodeRayTube.h"
-#include "../AdventOfCode2022/MonkeyStateMachine.h"
-#include "../AdventOfCode2022/HillClimbing.h"
+#include "../AdventOfCode2022/Day01/CalorieCounting.h"
+#include "../AdventOfCode2022/Day02/RockPaperScissors.h"
+#include "../AdventOfCode2022/Day03/Rucksack.h"
+#include "../AdventOfCode2022/Day04/PairOverlap.h"
+#include "../AdventOfCode2022/Day05/SupplyStacks.h"
+#include "../AdventOfCode2022/Day06/TuningTrouble.h"
+#include "../AdventOfCode2022/Day07/Directory.h"
+#include "../AdventOfCode2022/Day08/TreeMapper.h"
+#include "../AdventOfCode2022/Day09/RopeBridge.h"
+#include "../AdventOfCode2022/Day10/CathodeRayTube.h"
+#include "../AdventOfCode2022/Day11/MonkeyStateMachine.h"
+#include "../AdventOfCode2022/Day12/HillClimbing.h"
 
 void runDay1()
 {

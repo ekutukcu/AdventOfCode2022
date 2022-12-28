@@ -21,42 +21,40 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Directory.h">
+    <ClInclude Include="Day07\Directory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TreeMapper.h">
+    <ClInclude Include="Day08\TreeMapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CalorieCounting.h">
+    <ClInclude Include="Day01\CalorieCounting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PairOverlap.h">
+    <ClInclude Include="Day04\PairOverlap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RockPaperScissors.h">
+    <ClInclude Include="Day02\RockPaperScissors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rucksack.h">
+    <ClInclude Include="Day03\Rucksack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SupplyStacks.h">
+    <ClInclude Include="Day05\SupplyStacks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TuningTrouble.h">
+    <ClInclude Include="Day06\TuningTrouble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RopeBridge.h">
+    <ClInclude Include="Day09\RopeBridge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CathodeRayTube.h">
+    <ClInclude Include="Day10\CathodeRayTube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MonkeyStateMachine.h">
+    <ClInclude Include="Day11\MonkeyStateMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HillClimbing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="Day12\HillClimbing.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -65,38 +63,36 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Directory.cpp">
+    <ClCompile Include="Day07\Directory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CalorieCounting.cpp">
+    <ClCompile Include="Day01\CalorieCounting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PairOverlap.cpp">
+    <ClCompile Include="Day04\PairOverlap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RockPaperScissors.cpp">
+    <ClCompile Include="Day02\RockPaperScissors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rucksack.cpp">
+    <ClCompile Include="Day03\Rucksack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SupplyStacks.cpp">
+    <ClCompile Include="Day05\SupplyStacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TuningTrouble.cpp">
+    <ClCompile Include="Day06\TuningTrouble.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RopeBridge.cpp">
+    <ClCompile Include="Day09\RopeBridge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CathodeRayTube.cpp">
+    <ClCompile Include="Day10\CathodeRayTube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MonkeyStateMachine.cpp">
+    <ClCompile Include="Day11\MonkeyStateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HillClimbing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="Day12\HillClimbing.cpp" />
   </ItemGroup>
 </Project>

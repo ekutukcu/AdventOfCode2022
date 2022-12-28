@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "gtest/gtest.h"
-#include "../AdventOfCode2022/TreeMapper.h"
+#include "../AdventOfCode2022/Day08/TreeMapper.h"
 
 TEST(TreeMapper, getScenicScore) {
 	// arrange
