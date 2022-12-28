@@ -14,6 +14,7 @@
 #include "../AdventOfCode2022/RopeBridge.h"
 #include "../AdventOfCode2022/CathodeRayTube.h"
 #include "../AdventOfCode2022/MonkeyStateMachine.h"
+#include "../AdventOfCode2022/HillClimbing.h"
 
 void runDay1()
 {
@@ -219,8 +220,33 @@ void runDay11_2()
     std::cout << monkey_business << std::endl;
 }
 
+
+void runDay12()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input12.txt");
+
+    std::ifstream inputStream(filePath);
+
+    // act
+    auto shortest_path = get_shortest_path(inputStream);
+    // assert
+    std::cout << shortest_path << std::endl;
+}
+
+void runDay12_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\input12.txt");
+
+    std::ifstream inputStream(filePath);
+
+    // act
+    auto shortest_path = get_global_shortest_path(inputStream);
+    // assert
+    std::cout << shortest_path << std::endl;
+}
+
 int main()
 {
-    runDay11_2();
+    runDay12_2();
     return 0;
 }
