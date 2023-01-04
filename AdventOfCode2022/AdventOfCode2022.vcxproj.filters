@@ -54,7 +54,12 @@
     <ClInclude Include="Day11\MonkeyStateMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Day12\HillClimbing.h" />
+    <ClInclude Include="Day12\HillClimbing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day13\PacketParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -93,6 +98,11 @@
     <ClCompile Include="Day11\MonkeyStateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Day12\HillClimbing.cpp" />
+    <ClCompile Include="Day12\HillClimbing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day13\PacketParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

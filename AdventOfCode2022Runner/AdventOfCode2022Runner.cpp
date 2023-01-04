@@ -15,6 +15,7 @@
 #include "../AdventOfCode2022/Day10/CathodeRayTube.h"
 #include "../AdventOfCode2022/Day11/MonkeyStateMachine.h"
 #include "../AdventOfCode2022/Day12/HillClimbing.h"
+#include "../AdventOfCode2022/Day13/PacketParser.h"
 
 void runDay1()
 {
@@ -245,8 +246,34 @@ void runDay12_2()
     std::cout << shortest_path << std::endl;
 }
 
+void runDay13()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input13.txt");
+
+    std::ifstream inputStream(filePath);
+
+    // act
+    auto indices_sum = getIndicesSum(inputStream);
+    // assert
+    std::cout << indices_sum << std::endl;
+}
+
+
+
+void runDay13_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input13.txt");
+
+    std::ifstream inputStream(filePath);
+
+    // act
+    auto dk = findDecoderKey(inputStream);
+    // assert
+    std::cout << dk << std::endl;
+}
+
 int main()
 {
-    runDay12_2();
+    runDay13_2();
     return 0;
 }
