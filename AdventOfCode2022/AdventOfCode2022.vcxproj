@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Day14\Regolith.h" />
     <ClInclude Include="Day01\CalorieCounting.h" />
     <ClInclude Include="Day10\CathodeRayTube.h" />
     <ClInclude Include="Day12\HillClimbing.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Day14\Regolith.cpp" />
     <ClCompile Include="Day01\CalorieCounting.cpp" />
     <ClCompile Include="Day10\CathodeRayTube.cpp" />
     <ClCompile Include="Day12\HillClimbing.cpp" />

@@ -16,6 +16,7 @@
 #include "../AdventOfCode2022/Day11/MonkeyStateMachine.h"
 #include "../AdventOfCode2022/Day12/HillClimbing.h"
 #include "../AdventOfCode2022/Day13/PacketParser.h"
+#include "../AdventOfCode2022/Day14/Regolith.h"
 
 void runDay1()
 {
@@ -272,8 +273,37 @@ void runDay13_2()
     std::cout << dk << std::endl;
 }
 
+void runDay14()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input14.txt");
+
+    std::ifstream inputStream(filePath);
+
+    auto lines = regolith::readLines(inputStream);
+    Point sandStart(500, 0);
+    // act
+    auto count = regolith::getRestingSandCount(sandStart, lines);
+    // assert
+    std::cout << count << std::endl;
+}
+
+void runDay14_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input14.txt");
+
+    std::ifstream inputStream(filePath);
+
+    auto lines = regolith::readLines(inputStream);
+    Point sandStart(500, 0);
+    // act
+    auto count = regolith::getRestingSandWithFloorCount(sandStart, lines);
+    // assert
+    std::cout << count << std::endl;
+}
+
+
 int main()
 {
-    runDay13_2();
+    runDay14_2();
     return 0;
 }
