@@ -63,6 +63,12 @@
     <ClInclude Include="Day14\Regolith.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Beacon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day15\Beacon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -108,6 +114,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Day14\Regolith.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day15\Beacon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

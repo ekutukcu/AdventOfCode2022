@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Beacon.h" />
     <ClInclude Include="Day14\Regolith.h" />
     <ClInclude Include="Day01\CalorieCounting.h" />
     <ClInclude Include="Day10\CathodeRayTube.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Day08\TreeMapper.h" />
     <ClInclude Include="Day06\TuningTrouble.h" />
     <ClInclude Include="Day07\Directory.h" />
+    <ClInclude Include="Day15\Beacon.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Day13\PacketParser.h" />
     <ClInclude Include="pch.h" />
@@ -178,6 +180,7 @@
     <ClCompile Include="Day05\SupplyStacks.cpp" />
     <ClCompile Include="Day06\TuningTrouble.cpp" />
     <ClCompile Include="Day07\Directory.cpp" />
+    <ClCompile Include="Day15\Beacon.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Day13\PacketParser.cpp" />
     <ClCompile Include="pch.cpp">

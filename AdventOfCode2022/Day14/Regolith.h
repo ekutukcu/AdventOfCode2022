@@ -139,7 +139,7 @@ namespace regolith
 
 	int getRestingSandCount(Point sandStartingPoint, std::vector<Line>& lines)
 	{
-		int maxY = INT_MIN;
+		int64_t maxY = INT64_MIN;
 		for (auto& line : lines)
 		{
 			maxY = std::max(maxY, std::max(line.start.Y, line.end.Y));
@@ -183,7 +183,7 @@ namespace regolith
 
 	int getRestingSandWithFloorCount(Point sandStartingPoint, std::vector<Line>& lines)
 	{
-		int maxY = INT_MIN;
+		int64_t maxY = INT64_MIN;
 		for (auto& line : lines)
 		{
 			maxY = std::max(maxY, std::max(line.start.Y, line.end.Y));

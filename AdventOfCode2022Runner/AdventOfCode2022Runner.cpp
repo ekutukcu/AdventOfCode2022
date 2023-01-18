@@ -17,6 +17,7 @@
 #include "../AdventOfCode2022/Day12/HillClimbing.h"
 #include "../AdventOfCode2022/Day13/PacketParser.h"
 #include "../AdventOfCode2022/Day14/Regolith.h"
+#include "../AdventOfCode2022/Beacon.h"
 
 void runDay1()
 {
@@ -301,9 +302,35 @@ void runDay14_2()
     std::cout << count << std::endl;
 }
 
+void runDay15()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input15.txt");
+
+    std::ifstream inputStream(filePath);
+
+    auto beacon = beacon::Beacon::parse(inputStream);
+    auto dists = beacon.mapDistances();
+    int y = 2000000;
+    auto dist = beacon.getBeaconLessPositionCount(y, dists);
+    // assert
+    std::cout << dist << std::endl;
+}
+void runDay15_2()
+{
+    std::string filePath("C:\\Users\\emin\\source\\repos\\AdventOfCode2022\\AdventOfCode2022Runner\\Data\\input15.txt");
+
+    std::ifstream inputStream(filePath);
+
+    auto beacon = beacon::Beacon::parse(inputStream);
+    auto dists = beacon.mapDistances();
+    int64_t dist = beacon.getTuningfrequency(4000000, 4000000, dists);
+    
+    // assert
+    std::cout << dist << std::endl;
+}
 
 int main()
 {
-    runDay14_2();
+    runDay15_2();
     return 0;
 }

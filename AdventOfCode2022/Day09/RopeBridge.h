@@ -9,12 +9,12 @@
 #include <unordered_map>
 struct Point
 {
-	int X;
-	int Y;
+	int64_t X;
+    int64_t Y;
 
 	Point();
 
-	Point(int x, int y);
+	Point(int64_t x, int64_t y);
 
 	bool operator==(const Point& other) const;
 

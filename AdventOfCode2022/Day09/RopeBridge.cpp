@@ -20,7 +20,7 @@ int getVisitedPointCount(std::istream& inputStream, int numPoints)
 	};
 
 	std::unordered_set<Point> seenPoints;
-		int minX=0, maxX=0, minY=0, maxY=0;
+	int64_t minX=0, maxX=0, minY=0, maxY=0;
 	while (getline(inputStream, inputLine))
 	{
 		auto parts = split(' ', inputLine);
@@ -117,7 +117,7 @@ Point::Point() : X(0), Y(0)
 
 }
 
-Point::Point(int x, int y) :X(x), Y(y)
+Point::Point(int64_t x, int64_t y) :X(x), Y(y)
 {
 
 }
